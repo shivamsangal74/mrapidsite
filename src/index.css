@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #e23744;
+    --brand-secondary: #cb202d;
+    --brand-accent: #ff253a;
+    --bg-light: #f8f8f8;
+    --card-light: #ffffff;
+  }
+
+  body {
+    background-color: #f8f8f8;
+    color: #1c1c1c;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Zomato Signature Red & Clean Modern UI Styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 0 20px -5px rgba(226, 55, 68, 0.12);
+}
+
+.glass-card {
+  background: #ffffff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(235, 238, 242, 1);
+  box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(226, 55, 68, 0.4);
+  box-shadow: 0 16px 35px -10px rgba(226, 55, 68, 0.2);
+}
+
+/* Zomato Red Gradient Text FX */
+.gradient-text {
+  background: linear-gradient(135deg, #e23744 0%, #ff253a 50%, #b91c1c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Zomato Red Glowing Buttons */
+.gradient-button {
+  background: linear-gradient(135deg, #e23744 0%, #cb202d 100%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px rgba(226, 55, 68, 0.4);
+}
+
+.gradient-button:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  box-shadow: 0 8px 25px -3px rgba(226, 55, 68, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e23744;
+}
