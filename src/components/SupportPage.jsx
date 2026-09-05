@@ -136,7 +136,7 @@ export default function SupportPage() {
             </div>
             <h4 className="text-lg font-bold text-gray-900">Toll-Free Helpline</h4>
             <p className="text-xs text-gray-500">Speak directly with an mRapid order specialist anytime.</p>
-            <span className="inline-block text-xs font-bold text-[#e23744] pt-1">+1 (800) 555-MRAPID</span>
+            <span className="inline-block text-xs font-bold text-[#e23744] pt-1">+91 96341 26086</span>
           </div>
         </div>
 

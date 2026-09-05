@@ -8,6 +8,8 @@ import AppDownloadSection from './components/AppDownloadSection';
 import MultiVendorShowcase from './components/MultiVendorShowcase';
 import MarketingPartnerSection from './components/MarketingPartnerSection';
 import SupportPage from './components/SupportPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsPage from './components/TermsPage';
 import Footer from './components/Footer';
 import AppDownloadModal from './components/AppDownloadModal';
 import BackgroundCanvas from './components/BackgroundCanvas';
@@ -63,6 +65,38 @@ function SupportPageWrapper({ onOpenDownloadModal }) {
   );
 }
 
+// ─── Privacy Policy Page ───────────────────────────────────────────────────────
+function PrivacyPolicyWrapper({ onOpenDownloadModal }) {
+  return (
+    <div className="relative min-h-screen bg-[#f8f8f8] text-gray-900 font-sans">
+      <Navbar onOpenDownloadModal={() => onOpenDownloadModal('all')} />
+      <main>
+        <PrivacyPolicyPage />
+      </main>
+      <Footer
+        onOpenDownloadModal={onOpenDownloadModal}
+        onNavigate={() => {}}
+      />
+    </div>
+  );
+}
+
+// ─── Terms of Service Page ────────────────────────────────────────────────────
+function TermsWrapper({ onOpenDownloadModal }) {
+  return (
+    <div className="relative min-h-screen bg-[#f8f8f8] text-gray-900 font-sans">
+      <Navbar onOpenDownloadModal={() => onOpenDownloadModal('all')} />
+      <main>
+        <TermsPage />
+      </main>
+      <Footer
+        onOpenDownloadModal={onOpenDownloadModal}
+        onNavigate={() => {}}
+      />
+    </div>
+  );
+}
+
 // ─── Root App ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
@@ -83,6 +117,14 @@ export default function App() {
         <Route
           path="/support"
           element={<SupportPageWrapper onOpenDownloadModal={handleOpenDownloadModal} />}
+        />
+        <Route
+          path="/privacy"
+          element={<PrivacyPolicyWrapper onOpenDownloadModal={handleOpenDownloadModal} />}
+        />
+        <Route
+          path="/terms"
+          element={<TermsWrapper onOpenDownloadModal={handleOpenDownloadModal} />}
         />
       </Routes>
 

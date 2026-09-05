@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Apple, Play, Heart, ArrowUp, X } from 'lucide-react';
+import { Apple, Play, Heart, ArrowUp } from 'lucide-react';
 
 export default function Footer({ onOpenDownloadModal, onNavigate }) {
-  const [legalModal, setLegalModal] = useState(null);
   const navigate = useNavigate();
   const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.mrapido.user&hl=en_IN";
 
@@ -130,12 +129,12 @@ export default function Footer({ onOpenDownloadModal, onNavigate }) {
                 </button>
               </li>
               <li>
-                <button onClick={() => setLegalModal('privacy')} className="hover:text-[#e23744] transition-colors font-medium">
+                <button onClick={() => navigate('/privacy')} className="hover:text-[#e23744] transition-colors font-medium">
                   Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => setLegalModal('terms')} className="hover:text-[#e23744] transition-colors font-medium">
+                <button onClick={() => navigate('/terms')} className="hover:text-[#e23744] transition-colors font-medium">
                   Terms of Service
                 </button>
               </li>
@@ -162,48 +161,6 @@ export default function Footer({ onOpenDownloadModal, onNavigate }) {
         </div>
 
       </div>
-
-      {/* Legal Info Modal */}
-      {legalModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md">
-          <div className="relative w-full max-w-lg rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl text-left space-y-4 max-h-[80vh] overflow-y-auto">
-            <button
-              onClick={() => setLegalModal(null)}
-              className="absolute right-4 top-4 rounded-full bg-gray-100 p-2 text-gray-500 hover:text-gray-900"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            <h3 className="text-xl font-bold text-gray-900 capitalize">
-              mRapid {legalModal === 'privacy' ? 'Privacy Policy' : 'Terms of Service'}
-            </h3>
-
-            <div className="text-xs text-gray-600 space-y-3 leading-relaxed">
-              <p>
-                At mRapid ("Multi-Vendor, Multi-Choice – Your Perfect Ordering"), we prioritize privacy, transparent ordering terms, and secure multi-merchant payment processing.
-              </p>
-              <p>
-                <strong>1. Multi-Vendor Transactions:</strong> Orders containing products from separate merchants are fulfilled via optimized logistics routes. Each vendor prepares custom items according to your multi-choice selections.
-              </p>
-              <p>
-                <strong>2. Data Protection:</strong> We encrypt user accounts, phone numbers, delivery coordinates, and transaction details. Information is never sold to third-party advertisers.
-              </p>
-              <p>
-                <strong>3. Refund & Cancellation:</strong> Cancellations made before vendor preparation begin are eligible for instant refunds to your mRapid wallet or bank card.
-              </p>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={() => setLegalModal(null)}
-                className="w-full py-2.5 rounded-xl gradient-button font-bold text-xs text-white"
-              >
-                Close & Accept
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
     </footer>
   );

@@ -2,7 +2,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name mrapid.in;
+    server_name mrapid.in www.mrapid.in;
 
     root /var/www/mrapidsite/dist;
     index index.html;
