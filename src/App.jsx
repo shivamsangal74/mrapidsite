@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MrapidHero from './components/MrapidHero';
 import MrapidOptionCards from './components/MrapidOptionCards';
@@ -125,6 +125,14 @@ export default function App() {
         <Route
           path="/terms"
           element={<TermsWrapper onOpenDownloadModal={handleOpenDownloadModal} />}
+        />
+        <Route
+          path="/app"
+          element={<Navigate to="/" replace />}
+        />
+        <Route
+          path="/app/*"
+          element={<Navigate to="/" replace />}
         />
       </Routes>
 
